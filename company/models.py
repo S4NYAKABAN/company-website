@@ -24,4 +24,4 @@ class ContactMessage(models.Model):
     sent_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.name} — {self.sent_at.date()}'
+        return f'{self.name} - {self.sent_at.date()}'

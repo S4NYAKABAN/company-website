@@ -1,3 +1,8 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def home(request): pass
+def services(request): pass
+def clients(request): pass
+def contact(request): pass
+def contact_success(request): pass
