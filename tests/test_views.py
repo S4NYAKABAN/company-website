@@ -37,5 +37,5 @@ def test_contact_post(client):
 
 @pytest.mark.django_db
 def test_service_model():
-    Service.objects.create(title='Test Service', description='Test description')
+    s = Service.objects.create(title='Test Service', description='Test description')
     assert str(s) == 'Test Service'
