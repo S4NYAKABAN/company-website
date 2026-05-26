@@ -1,0 +1,35 @@
+{% extends 'company/base.html' %}
+{% block content %}
+
+<section class="bg-dark text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Ласкаво просимо до MyCompany</h1>
+    <p class="lead">Ми надаємо професійні послуги для вашого бізнесу</p>
+    <a href="/services/" class="btn btn-primary btn-lg mt-3">Наші послуги</a>
+    <a href="/contact/" class="btn btn-outline-light btn-lg mt-3 ms-2">Зв'язатися</a>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Що ми пропонуємо</h2>
+    <div class="row g-4">
+      {% for service in services %}
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ service.title }}</h5>
+            <p class="card-text text-muted">{{ service.description }}</p>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <p class="text-center text-muted">
+        Послуги ще не додані. Зайди в /admin і додай перші записи.
+      </p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}
