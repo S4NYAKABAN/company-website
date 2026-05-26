@@ -29,13 +29,13 @@ def test_contact_page_get(client):
 @pytest.mark.django_db
 def test_contact_post(client):
     response = client.post('/contact/', {
-        'name': 'Тест',
+        'name': 'Test User',
         'email': 'test@test.com',
-        'message': 'Привіт',
+        'message': 'Hello world',
     })
     assert response.status_code == 302
 
 @pytest.mark.django_db
 def test_service_model():
-    s = Service.objects.create(title='Розробка', description='Веб-розробка')
-    assert str(s) == 'Розробка'
+    Service.objects.create(title='Test Service', description='Test description')
+    assert str(s) == 'Test Service'
